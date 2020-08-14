@@ -1,16 +1,26 @@
-# Multiples of 3 and 5
+def main():
+    for _ in range(int(input())):
+        n = int(input()) - 1
 
-T = int(input())
-arr = [int(input()) for i in range(T)]
-results = []
-for i in arr:
-    sum = 0
-    for j in range(i):
-        if j%3 == 0 or j%5 ==0:
-            sum += j
-        else:
-            continue
-    results.append(sum)
-for i in results:
-    print(i)
+        q = n // 3
+        total_3 = q * q
+        q -= 1
+        sum_of_series = (q * (q + 1)) // 2
+        sum_of_3 = (total_3 - sum_of_series) * 3
 
+        q = n // 5
+        total_5 = q * q
+        q -= 1
+        sum_of_series = (q * (q + 1)) // 2
+        sum_of_5 = (total_5 - sum_of_series) * 5
+
+        q = n // 15
+        total_15 = q * q
+        q -= 1
+        sum_of_series = (q * (q + 1)) // 2
+        sum_of_15 = (total_15 - sum_of_series) * 15
+
+        print((sum_of_3 + sum_of_5) - sum_of_15)
+
+
+main()
